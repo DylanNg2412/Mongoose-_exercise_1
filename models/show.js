@@ -5,7 +5,7 @@ const showSchema = new Schema({
   title: { type: String, require: true },
   creator: { type: String, require: true },
   premiere_year: { type: Number, require: true },
-  end_year: Number,
+  end_year: { type: Number },
   genre: { type: String, require: true },
   rating: { type: Number, require: true },
 });
