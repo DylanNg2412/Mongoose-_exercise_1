@@ -14,14 +14,14 @@ router.get("/", async (req, res) => {
   try {
     const genre = req.query.genre;
     const rating = req.query.rating;
-    const premiered_after = req.query.premiere_year;
+    const premiere_year = req.query.premiere_year;
     let shows = [];
     if (genre) {
       shows = await Show.find({ genre: genre });
     } else if (rating) {
       shows = await Show.find({ rating: { $gt: rating } });
-    } else if (premiered_after) {
-      shows = await Show.find({ premiere_year: { $gt: premiered_after } });
+    } else if (premiere_year) {
+      shows = await Show.find({ premiere_year: { $gt: premiere_year } });
     } else {
       shows = await Show.find();
     }
